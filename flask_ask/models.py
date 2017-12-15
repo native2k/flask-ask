@@ -117,11 +117,6 @@ class _Response(object):
                 'template': {
                     'type': template,
                     'backButton': backButton,
-                    'backgroundImage': {
-                        'sources': [
-                            {'url': background_image_url}
-                            ]
-                    },
                     'title': title,
                     'textContent': text
                 }
@@ -134,10 +129,16 @@ class _Response(object):
                     {'url': image}
                 ]
             }
-            
+        if background_image_url:
+            directive[0]['backgroundImage'] = {
+                'sources': [
+                    {'url': background_image_url}
+                ]
+            },
+
         if token is not None:
             directive[0]['template']['token'] = token
-            
+
         if hintText is not None:
             hint = {
                 'type':'Hint',
