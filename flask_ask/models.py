@@ -130,7 +130,7 @@ class _Response(object):
                 ]
             }
         if background_image_url:
-            directive[0]['backgroundImage'] = {
+            directive[0]['template']['backgroundImage'] = {
                 'sources': [
                     {'url': background_image_url}
                 ]
