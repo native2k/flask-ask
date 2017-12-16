@@ -134,7 +134,7 @@ class _Response(object):
                 'sources': [
                     {'url': background_image_url}
                 ]
-            },
+            }
 
         if token is not None:
             directive[0]['template']['token'] = token
