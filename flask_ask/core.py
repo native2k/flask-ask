@@ -3,7 +3,7 @@ import sys
 import yaml
 import inspect
 from datetime import datetime
-from StringIO import StringIO
+from io import StringIO
 from functools import wraps, partial
 
 import aniso8601
@@ -871,4 +871,4 @@ class YamlLoader(BaseLoader):
         if template in self.mapping:
             source = self.mapping[template]
             return source, None, lambda: source == self.mapping.get(template)
-        return TemplateNotFound(template)
+        raise TemplateNotFound(template)
